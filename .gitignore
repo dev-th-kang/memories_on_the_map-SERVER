@@ -1,0 +1,7 @@
+##front test
+index.*
+
+##back etc
+node_modules*
+.env
+package-lock.json
