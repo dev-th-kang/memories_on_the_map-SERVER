@@ -7,7 +7,6 @@ module.exports ={
         const sql = `select * from ${USER_TABLE} where ID = "${id}"`
         db.query(sql, (err,results)=>{
             if(err) reject({'state':false,'msg':'디비 에러'})
-
             if(!results.length) resolve({'state':true})
             else reject({'state':false,'msg':'아이디 이미 존재'})
         })

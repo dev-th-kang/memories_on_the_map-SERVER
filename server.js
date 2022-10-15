@@ -30,8 +30,6 @@ server.use(passport.session());
 server.use(bodyParser.json())
 server.use(bodyParser.urlencoded({extended:false}))
 
-db.connect()
-
 //TODO:middleware
 server.use('/api', route)
 
@@ -40,3 +38,5 @@ server.use('/api', route)
 server.listen(PORT, ()=>{
     console.log(`[SERVER LOG - http://localhost:${PORT} ] : SERVER OPEN ..!`)
 })
+
+db.connect(()=>console.log(`[SERVER LOG - http://localhost:${PORT} ] : DB OPEN ..!`))

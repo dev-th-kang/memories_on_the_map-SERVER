@@ -16,12 +16,13 @@ passport.use('local-login', new LocalStrategy({
 }))   
 
 passport.serializeUser((user,done)=>{
-	console.log(`id : ${user.ID}, session 발행`)
+    
+    console.log(`[SERVER LOG - INFO] : "${user.ID}"계정(${user.name}) Session 발행`)
     done(null, user)
 })
 
 
 passport.deserializeUser((user, done)=> {
-	console.log(`id : ${user.name}, session 획득`)
+    console.log(`[SERVER LOG - INFO] : "${user.ID}"계정(${user.name}) Session 획득`)
 	done(null, user.name)
 }) 
