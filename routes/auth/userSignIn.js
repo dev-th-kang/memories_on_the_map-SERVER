@@ -3,6 +3,8 @@ const LocalStrategy = require('passport-local').Strategy
 const route = require('express').Router()
 route.post('/',(req,res,next)=>{
     passport.authenticate('local-login',(err,user)=>{
+        
+        console.log(`[SERVER LOG - INFO] : ${user.ID}에서 로그인 요청`)
         if(!user){
             res.send(err)
         }else{

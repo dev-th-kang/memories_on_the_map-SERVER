@@ -16,10 +16,12 @@ const UserIDSearch = async(id)=>{
 route.post('/',async(req,res)=>{
     const userinfo = req.body
     const result = await UserIDSearch(userinfo.id)
-    console.log(result)
-    if(!result.state)
+    if(!result.state){
+        console.log(`[SERVER LOG - ERR] : ${userinfo.id}은 이미 존재`)
         res.send(result)
+    }
     else{
+        console.log(`[SERVER LOG - SUCCEED] : ${userinfo.id}으로 가입완료`)
         user.userSignUp(userinfo)
         .then((values)=>{
             res.send(values)
