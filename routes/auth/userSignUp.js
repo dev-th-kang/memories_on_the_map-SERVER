@@ -5,7 +5,7 @@ const passport = require('passport')
  * get name, ID, PW, email, phone
  */
 const UserIDSearch = async(id)=>{
-    await user.userSearch(id)
+    await user.existUserSearch(id)
     .then((values)=>{
         result = values
     }).catch(async(values)=>{

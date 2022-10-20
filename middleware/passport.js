@@ -24,5 +24,5 @@ passport.serializeUser((user,done)=>{
 
 passport.deserializeUser((user, done)=> {
     console.log(`[SERVER LOG - INFO] : "${user.ID}"계정(${user.name}) Session 획득`)
-	done(null, user.name)
+	done(null, {'id':user.ID,'name':user.name})
 }) 
