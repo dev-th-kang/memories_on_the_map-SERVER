@@ -5,6 +5,8 @@ const userSignIn = require('./auth/userSignIn')
 const userSignUp = require('./auth/userSignUp')
 const userLogOut = require('./auth/userLogOut')
 
+const user = require('./user/user')
+
 
 require('../middleware/passport')
 
@@ -13,6 +15,7 @@ route.use('/auth', auth)
 route.use('/auth/join', userSignUp)
 route.use('/auth/login', userSignIn)
 route.use('/auth/logout', userLogOut)
+route.use('/user',user)
 
 
 module.exports = route
